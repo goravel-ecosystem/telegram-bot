@@ -16,6 +16,7 @@ func (command *AskCommand) Description() string {
 }
 
 func (command *AskCommand) Handle(ctx tele.Context) error {
+	// TODO: implement the command logic
 	err := ctx.Notify(tele.Typing)
 	if err != nil {
 		return err

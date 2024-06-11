@@ -20,5 +20,6 @@ func (command *HelpCommand) Description() string {
 
 // Handle executes the command.
 func (command *HelpCommand) Handle(ctx tele.Context) error {
+	// TODO: implement the command logic
 	return ctx.Send("This is a help message", tele.ModeMarkdown)
 }
