@@ -36,7 +36,7 @@ func (command *ListCommand) Handle(ctx tele.Context) error {
 		if cmd.Text == command.Name() {
 			continue
 		}
-		text += fmt.Sprintf("`%s` - _%s_\n", cmd.Text, cmd.Description)
+		text += fmt.Sprintf("/%s - _%s_\n", cmd.Text, cmd.Description)
 	}
 
 	return ctx.Reply(text, tele.ModeMarkdown)
