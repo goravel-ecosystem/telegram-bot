@@ -5,8 +5,8 @@ import (
 
 	tele "gopkg.in/telebot.v3"
 
+	"github.com/goravel-ecosystem/telegram-bot/bot"
 	"github.com/goravel-ecosystem/telegram-bot/config"
-	"github.com/goravel-ecosystem/telegram-bot/console"
 	"github.com/goravel-ecosystem/telegram-bot/foundation"
 	"github.com/goravel-ecosystem/telegram-bot/routes"
 )
@@ -20,7 +20,7 @@ func Boot() {
 	app.SetBot(createBot())
 
 	// Register the commands
-	kernel := &console.Kernel{}
+	kernel := &bot.Kernel{}
 	app.RegisterCommands(kernel.Commands())
 
 	// Set Custom Handler
@@ -30,7 +30,7 @@ func Boot() {
 func createBot() *tele.Bot {
 	con := foundation.Config()
 
-	bot, err := tele.NewBot(tele.Settings{
+	b, err := tele.NewBot(tele.Settings{
 		Token:  con.GetString("bot.token"),
 		Poller: &tele.LongPoller{Timeout: time.Duration(con.GetInt("bot.poller.timeout")) * time.Second},
 	})
@@ -39,5 +39,5 @@ func createBot() *tele.Bot {
 		panic(err)
 	}
 
-	return bot
+	return b
 }

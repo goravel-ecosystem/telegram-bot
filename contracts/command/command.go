@@ -1,4 +1,4 @@
-package console
+package command
 
 import tele "gopkg.in/telebot.v3"
 

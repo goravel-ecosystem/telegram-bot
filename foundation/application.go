@@ -5,7 +5,7 @@ import (
 	"github.com/spf13/viper"
 	tele "gopkg.in/telebot.v3"
 
-	"github.com/goravel-ecosystem/telegram-bot/contracts/console"
+	"github.com/goravel-ecosystem/telegram-bot/contracts/command"
 	"github.com/goravel-ecosystem/telegram-bot/support"
 )
 
@@ -57,16 +57,16 @@ func (app *Application) SetBot(bot *tele.Bot) {
 	app.bot = bot
 }
 
-func (app *Application) RegisterCommands(commands []console.Command) {
+func (app *Application) RegisterCommands(commands []command.Command) {
 	var cmds []tele.Command
-	for _, command := range commands {
+	for _, cmd := range commands {
 		cmds = append(cmds, tele.Command{
-			Text:        command.Name(),
-			Description: command.Description(),
+			Text:        cmd.Name(),
+			Description: cmd.Description(),
 		})
 
 		// register the handler
-		app.bot.Handle(command.Name(), command.Handle)
+		app.bot.Handle(cmd.Name(), cmd.Handle)
 	}
 
 	if err := app.bot.SetCommands(cmds); err != nil {
