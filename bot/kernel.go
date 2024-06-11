@@ -11,6 +11,7 @@ type Kernel struct {
 func (kernel *Kernel) Commands() []commandcontract.Command {
 	return []commandcontract.Command{
 		&commands.AboutCommand{},
+		&commands.AskCommand{},
 		&commands.ListCommand{},
 		&commands.HelpCommand{},
 		&commands.PingCommand{},
