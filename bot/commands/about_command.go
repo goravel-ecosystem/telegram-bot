@@ -19,6 +19,6 @@ func (command *AboutCommand) Handle(ctx tele.Context) error {
 		return err
 	}
 
-	message := ""
+	message := "about the bot"
 	return ctx.Reply(message, tele.ModeMarkdown)
 }

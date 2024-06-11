@@ -19,6 +19,6 @@ func (command *HelpCommand) Description() string {
 }
 
 // Handle executes the command.
-func (command *HelpCommand) Handle(tele.Context) error {
-	return nil
+func (command *HelpCommand) Handle(ctx tele.Context) error {
+	return ctx.Send("This is a help message", tele.ModeMarkdown)
 }
