@@ -19,5 +19,5 @@ func (command *PingCommand) Handle(ctx tele.Context) error {
 		return err
 	}
 
-	return ctx.Send("pong!")
+	return ctx.Reply("pong!")
 }

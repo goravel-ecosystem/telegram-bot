@@ -39,5 +39,5 @@ func (command *ListCommand) Handle(ctx tele.Context) error {
 		text += fmt.Sprintf("`%s` - _%s_\n", cmd.Text, cmd.Description)
 	}
 
-	return ctx.Send(text, tele.ModeMarkdown)
+	return ctx.Reply(text, tele.ModeMarkdown)
 }

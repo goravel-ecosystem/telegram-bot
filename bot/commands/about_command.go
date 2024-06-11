@@ -20,6 +20,5 @@ func (command *AboutCommand) Handle(ctx tele.Context) error {
 	}
 
 	message := ""
-
-	return ctx.Send(message, tele.ModeMarkdown)
+	return ctx.Reply(message, tele.ModeMarkdown)
 }
