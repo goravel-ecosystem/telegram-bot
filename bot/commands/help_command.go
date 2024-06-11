@@ -17,7 +17,7 @@ func (command *HelpCommand) Name() string {
 
 // Description returns the description of the command.
 func (command *HelpCommand) Description() string {
-	return "list all available commands and their descriptions"
+	return "list all available commands"
 }
 
 // Handle executes the command.
