@@ -4,6 +4,8 @@ go 1.21.0
 
 require (
 	github.com/goravel/framework v1.14.0
+	github.com/philippgille/chromem-go v0.6.0
+	github.com/sashabaranov/go-openai v1.24.1
 	github.com/spf13/viper v1.19.0
 	gopkg.in/telebot.v3 v3.2.1
 )
